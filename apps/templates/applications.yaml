@@ -7,6 +7,10 @@ metadata:
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
+  metadata:
+  annotations:
+    argo.octopus.com/project: "argocd-guestbook"
+    argo.octopus.com/environment: "development"
 spec:
   destination:
     namespace: {{ .namespace | default .name | quote }}
